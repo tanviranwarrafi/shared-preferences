@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sharedpreferences/data_store_and_show.dart';
+import 'package:tutorial/tutorial_app.dart';
+import 'package:tutorial/utils/app_utils.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: DataStoreAndShowPage(),
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await portraitMode();
+  runApp(TutorialApp());
 }
